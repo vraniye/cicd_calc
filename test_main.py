@@ -3,7 +3,7 @@ from main import resultat
 def tests_fn():
     assert resultat(132, "+", 314) == 446
     assert resultat(132, "+", 14) == 146
-    assert resultat(12, "*", 3) == 63
+    assert resultat(12, "*", 3) == 36
     assert resultat(10, "*", 20) == 200
     assert resultat(42, "-", 22) == 20
     assert resultat(33, "-", 11) == 22
