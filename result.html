@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="/result" method="POST">
+  Первое число: <input name="first_num" type="text"><br>
+  Второе число: <input name="second_num" type="text"><br>
+  Операция: <input name="operation" type="text"><br>
+  {% module xsrf_form_html() %}
+  <input type="submit" value="Посчитать">
+</form>
+<hr>
+<h2>Результат: {{ result }} </h2>
+<hr>
+{% end %}

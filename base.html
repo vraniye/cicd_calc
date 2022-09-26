@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="{{ static_url("css/style.css") }}" type="text/css">
+  </head>
+  <body>
+    <div id="body">
+      <div id="header">
+        <h1><a href="/">Стилёывый калькулятор<img src="{{ static_url("source/calc.jpg") }}"></a></h1>
+      </div>
+      <div id="content">{% block body %}{% end %}</div>
+    </div>
+  </body>
+</html>
