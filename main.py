@@ -27,11 +27,11 @@ class ResultHandler(tornado.web.RequestHandler):
         second_number = self.get_argument("second_num", default=None, strip=False)
         operation = self.get_argument("operation", default=None, strip=False)
         try:
-            print(fisrt_number, second_number, operation)
             result = resultat(int(fisrt_number), operation, int(second_number))
+            self.render("result.html", result=result)
         except Exception as err:
             self.render("result.html", result="Неверно введены данные, попробуйте ещё раз")
-        self.render("result.html", result=result)
+        
 
 def make_app():
     return tornado.web.Application([
