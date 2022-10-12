@@ -1,0 +1,14 @@
+image: python:3.10.3
+
+
+before_script:
+  - python --version
+  - pip install virtualenv
+  - vitrualenv venv
+  - source vemv/bin/activate
+  - pip install -r requirements.txt
+
+test:
+  script:
+    - python -m unittest discover -s "./tests" -p "*_test.py"
+    
