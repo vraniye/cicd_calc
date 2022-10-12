@@ -27,7 +27,7 @@ class MainHandler(tornado.web.RequestHandler):
 class ResultHandler(tornado.web.RequestHandler):
     def post(self):
         fisrt_number = self.get_argument("first_num",
-                                          default=None, strip=False)
+                                        default=None, strip=False)
         second_number = self.get_argument("second_num",
                                           default=None, strip=False)
         operation = self.get_argument("operation", default=None, strip=False)
@@ -44,9 +44,9 @@ def make_app():
         (r"/", MainHandler),
         (r"/result", ResultHandler),
     ],
-    debug=True,
-    autoreload=True,
-    static_path=os.path.join(os.path.dirname(__file__), "static"))
+        debug=True,
+        autoreload=True,
+        static_path=os.path.join(os.path.dirname(__file__), "static"))
 
 
 if __name__=="__main__":
