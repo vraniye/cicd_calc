@@ -1,9 +1,10 @@
+from typing import Any
 import tornado.ioloop
 import tornado.web
 import os
 
 
-def resultat(first_num, op, second_num):
+def resultat(first_num: int, op: str, second_num: int) -> Any:
     if op == "+":
         return first_num + second_num
     elif op == "-":
@@ -20,12 +21,12 @@ def resultat(first_num, op, second_num):
 
 
 class MainHandler(tornado.web.RequestHandler):
-    def get(self):
+    def get(self: Any) -> None:
         self.render("result.html", result=None)
 
 
 class ResultHandler(tornado.web.RequestHandler):
-    def post(self):
+    def post(self: Any) -> None:
         fisrt_number = self.get_argument("first_num",
                                          default=None, strip=False)
         second_number = self.get_argument("second_num",
@@ -39,7 +40,7 @@ class ResultHandler(tornado.web.RequestHandler):
                         result="Неверно введены данные, попробуйте ещё раз")
 
 
-def make_app():
+def make_app() -> tornado.web.Application:
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/result", ResultHandler),

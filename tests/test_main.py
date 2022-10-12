@@ -1,7 +1,7 @@
 import requests as r
 
 
-def test_1():
+def test_1() -> None:
     data = {
             'first_num': "2",
             'second_num': "3",
@@ -15,7 +15,7 @@ def test_1():
     assert resultat_num == 5
 
 
-def test_2():
+def test_2() -> None:
     data = {
             'first_num': "12",
             'second_num': "3",
@@ -29,7 +29,7 @@ def test_2():
     assert resultat_num == 36
 
 
-def test_3():
+def test_3() -> None:
     data = {
             'first_num': "12",
             'second_num': "3",
