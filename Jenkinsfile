@@ -27,6 +27,7 @@ pipeline {
             steps{
                 sh 'python -m unittest discover -s "./tests" -p "test_main.py"'
                 sh "${BIN_PATH}flake8 ."
+                sh "${BIN_PATH}mypy ."
             }
         }
     }
